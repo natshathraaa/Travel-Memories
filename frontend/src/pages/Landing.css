@@ -1,0 +1,250 @@
+/* Landing Page Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLetter {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInSubtitle {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealLetter {
+  from {
+    opacity: 0;
+    font-size: 0;
+  }
+  to {
+    opacity: 1;
+    font-size: 1em;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Goudy+Bookletter+1911&display=swap');
+
+/* Landing Hero Section */
+.landing-hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background: #e8dcc8;
+}
+
+/* World Map Background */
+.landing-map-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1920&h=1080&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: slideIn 1.2s ease-out;
+  opacity: 1;
+}
+
+/* White Overlay */
+.landing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  z-index: 2;
+}
+
+/* Content Container */
+.landing-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.landing-main {
+  max-width: 700px;
+  width: 100%;
+}
+
+/* Title */
+.landing-title {
+  font-family: 'Algerian', 'Arial Black', sans-serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 400;
+  color: #3d2817;
+  margin: 0 0 50px 0;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  text-shadow: 0 4px 12px rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
+
+/* Subtitle */
+.landing-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.9rem, 1.6vw, 1.2rem);
+  font-weight: 400;
+  color: #4a3728;
+  margin: 0 0 40px 0;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+  text-shadow: 0 2px 6px rgba(255,255,255,0.6);
+}
+
+/* Buttons Container */
+.landing-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+
+.landing-btn {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  padding: 12px 36px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Primary Button (Get Started) */
+.btn-primary.landing-btn {
+  background: transparent;
+  color: #5a4530;
+  border: 2px solid #5a4530;
+  box-shadow: 0 4px 16px rgba(90, 69, 48, 0.15);
+}
+
+.btn-primary.landing-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(90, 69, 48, 0.08);
+  box-shadow: 0 8px 24px rgba(90, 69, 48, 0.25);
+  color: #5a4530;
+}
+
+.btn-primary.landing-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Secondary Button (Login) */
+.btn-secondary.landing-btn {
+  background: transparent;
+  color: #5a4530;
+  border: 2px solid #5a4530;
+  box-shadow: 0 4px 16px rgba(90, 69, 48, 0.15);
+}
+
+.btn-secondary.landing-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(90, 69, 48, 0.08);
+  box-shadow: 0 8px 24px rgba(90, 69, 48, 0.25);
+  color: #5a4530;
+}
+
+.btn-secondary.landing-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .landing-title {
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+    margin-bottom: 15px;
+  }
+
+  .landing-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .landing-buttons {
+    gap: 12px;
+  }
+
+  .landing-btn {
+    padding: 12px 32px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-title {
+    font-size: 2rem;
+  }
+
+  .landing-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .landing-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .landing-btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
